@@ -1,12 +1,8 @@
 package org.ferhat.restcontroller.api;
 
 import org.ferhat.restcontroller.business.abstracts.ICustomerService;
-import org.ferhat.restcontroller.business.impl.CustomerManager;
-import org.ferhat.restcontroller.dao.CustomerRepo;
 import org.ferhat.restcontroller.entity.Customer;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/customer")
