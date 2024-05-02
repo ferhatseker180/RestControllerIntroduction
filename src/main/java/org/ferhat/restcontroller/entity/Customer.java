@@ -1,11 +1,17 @@
 package org.ferhat.restcontroller.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "customers")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Customer {
 
     @Id
@@ -32,63 +38,5 @@ public class Customer {
         FEMALE
     }
 
-    public Customer() {
-    }
 
-    public Customer(int id, String name, String mail) {
-        this.id = id;
-        this.name = name;
-        this.mail = mail;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public LocalDate getOnDate() {
-        return onDate;
-    }
-
-    public void setOnDate(LocalDate onDate) {
-        this.onDate = onDate;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", mail='" + mail + '\'' +
-                ", onDate=" + onDate +
-                ", gender=" + gender +
-                '}';
-    }
 }

@@ -5,6 +5,8 @@ import org.ferhat.restcontroller.dao.CustomerRepo;
 import org.ferhat.restcontroller.entity.Customer;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CustomerManager implements ICustomerService {
 
@@ -25,8 +27,8 @@ public class CustomerManager implements ICustomerService {
     }
 
     @Override
-    public void delete(Customer customer) {
-        this.customerRepo.delete(customer);
+    public void delete(int id) {
+        this.customerRepo.delete(this.customerRepo.getById(id));
     }
 
     @Override
@@ -35,5 +37,10 @@ public class CustomerManager implements ICustomerService {
             throw new RuntimeException("Id numaralı bir entity giriniz!");
         }
         return this.customerRepo.save(customer);
+    }
+
+    @Override
+    public List<Customer> findAll() {
+        return this.customerRepo.findAll();
     }
 }
