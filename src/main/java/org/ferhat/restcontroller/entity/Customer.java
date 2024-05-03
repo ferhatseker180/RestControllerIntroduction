@@ -1,6 +1,7 @@
 package org.ferhat.restcontroller.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class Customer {
     @Column(name = "customer_name", nullable = false, length = 50)
     private String name;
 
+    @Email(message = "Invalid mail address")
     @Column(name = "customer_mail", unique = true)
     private String mail;
 
